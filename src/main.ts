@@ -7,18 +7,11 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   strict: true,
-});
-
-router.beforeEach((to, from) => {
-  console.log({ hook: 'Before each', to: to.path, from: from.path });
-});
-
-router.beforeResolve((to, from) => {
-  console.log({ hook: 'Before resolve', to: to.path, from: from.path });
-});
-
-router.afterEach((to, from, error) => {
-  console.log({ hook: 'After each', to: to.path, from: from.path, error });
+  scrollBehavior(to, from, savePosition) {
+    return {
+      top: 0,
+    };
+  },
 });
 
 const app = createApp(App);
