@@ -8,6 +8,14 @@ const router = createRouter({
   routes,
   strict: true,
   scrollBehavior(to, from, savePosition) {
+    console.log(to);
+    if (to.hash) {
+      return {
+        el: to.hash,
+        top: 80,
+        behavior: 'smooth',
+      };
+    }
     return {
       top: 0,
     };
