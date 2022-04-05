@@ -1,6 +1,5 @@
 import { RouteRecordRaw } from 'vue-router';
 import PageA from './PageA.vue';
-import PageB from './PageB.vue';
 
 export const routes: RouteRecordRaw[] = [
   {
@@ -13,9 +12,6 @@ export const routes: RouteRecordRaw[] = [
   },
   {
     path: '/b',
-    component: PageB,
-    meta: {
-      animation: 'fade',
-    },
+    component: () => import('./PageB.vue'),
   },
 ];
