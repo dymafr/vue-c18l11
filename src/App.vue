@@ -5,11 +5,7 @@
     <router-link class="mr-10" to="/b"> Page B</router-link>
   </nav>
   <div class="d-flex flex-row justify-content-center">
-    <router-view v-slot="{ Component, route }">
-      <Transition :name="route.meta.animation" mode="out-in">
-        <Component :is="Component" />
-      </Transition>
-    </router-view>
+    <router-view> </router-view>
   </div>
 </template>
 
@@ -19,22 +15,10 @@
 @import './assets/scss/base.scss';
 
 nav {
+  position: fixed;
   background-color: var(--primary-1);
   a {
     color: white;
   }
-}
-
-.fade-enter-from {
-  transform: scale(0) rotate(-360deg);
-}
-
-.fade-enter-active {
-  transition: all 1s;
-}
-
-.fade-leave-to {
-  transform: scale(2) rotate(360deg);
-  opacity: 0;
 }
 </style>
