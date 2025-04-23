@@ -15,7 +15,7 @@
 <script setup lang="ts"></script>
 
 <style lang="scss">
-@import './assets/scss/base.scss';
+@use './assets/scss/base.scss';
 
 nav {
   position: fixed;
